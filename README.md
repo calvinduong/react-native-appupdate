@@ -1,14 +1,14 @@
 # React Native AppUpdate
-Update apk and update from app store in React Native.
+Update apk and update from app store in React Native. Yorked from 'react-native-appupdate' and replace with iosAppBundleId for better up-to-date app information.
 
 ## Installation
 ```bash
-npm install react-native-appupdate --save
+npm install calvinduong/react-native-appupdate --save
 ```
 **Note: If your react-native version < 0.40**
 
 ```bash
-npm install react-native-appupdate@1.0.5 --save
+npm install calvinduong/react-native-appupdate@1.0.5 --save
 ```
 
 adding automatically with react-native link
@@ -23,7 +23,7 @@ import { Alert } from 'react-native';
 import AppUpdate from 'react-native-appupdate';
 
 const appUpdate = new AppUpdate({
-  iosAppId: '123456',
+  iosAppBundleId: 'com.yourdomain.app',
   apkVersionUrl: 'https://github.com/version.json',
   needUpdateApp: (needUpdate) => {
     Alert.alert(
