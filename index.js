@@ -94,16 +94,16 @@ class AppUpdate {
   }
 
   getAppStoreVersion() {
-    if (!this.options.iosAppId) {
-      console.log("iosAppId doesn't exist.");
+    if (!this.options.iosAppBundleId) {
+      console.log("iosAppBundleId doesn't exist.");
       return;
     }
-    this.GET("https://itunes.apple.com/lookup?id=" + this.options.iosAppId, this.getAppStoreVersionSuccess.bind(this), this.getVersionError.bind(this));
+    this.GET("https://itunes.apple.com/lookup?bundleId=" + this.options.iosAppBundleId, this.getAppStoreVersionSuccess.bind(this), this.getVersionError.bind(this));
   }
 
   getAppStoreVersionSuccess(data) {
     if (data.resultCount < 1) {
-      console.log("iosAppId is wrong.");
+      console.log("iosAppBundleId is wrong.");
       return;
     }
     const result = data.results[0];
